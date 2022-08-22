@@ -1,8 +1,8 @@
 .container{
 display: flex;
 flex-direction: column;
-justify-content: center;
 align-items: center;
+text-align: center;
 }
 
 .container h1{
@@ -11,7 +11,7 @@ align-items: center;
 
 .calculator{
  background-color:#f6f6f6;
- box-shadow: 5px 5px 10px #e6e6e6, -5px -5px 10px #e6e6e6;
+ box-shadow: 1px 1px 10px #e6e6e6, -1px -1px 10px #e6e6e6;
  border-radius: 2rem;
  width: 22rem;
  font-weight: bold;
@@ -38,7 +38,6 @@ gap: 0.7rem;
 }
 
 .unit{
-background-color:#f6f6f6;
 display: flex;
 justify-content: center;
 align-items: center;
