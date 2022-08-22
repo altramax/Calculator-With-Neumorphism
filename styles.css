@@ -48,18 +48,6 @@ height: 3.9rem;
 margin-bottom: 0.5rem;
 }
 
-.unit{
-display: flex;
-justify-content: center;
-align-items: center;
-box-shadow: 3px 3px 10px #c4c4c4, -3px -3px 10px #ffffff;
-border-radius: 50%;
-width: 3.9rem;
-height: 3.9rem;
-margin-bottom: 0.5rem;
-}
-
-
 .unit-0{
 border-radius: 40%;
 flex-grow: 0.4;
