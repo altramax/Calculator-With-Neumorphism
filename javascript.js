@@ -6,6 +6,7 @@ const cut = document.getElementById("cut");
 inputs.forEach(unit =>{
 unit.addEventListener("click", ()=>{
 
+    // For display
     const running = () => {
         display.append(unit.textContent);
     }
@@ -18,18 +19,35 @@ unit.addEventListener("click", ()=>{
 
     
     if(unit.textContent === "C"){
-      
-        let p = (textContent)=>{
-         let  w = textContent.slice(0, -1);
-          return w
+       
+        let p = ()=>{
+
+    //    console.log(cut.innerHTML.slice(0,-2));
+
+    //       return cut.innerHTML.slice(0,-1).replace(cut.innerHTML.length - 2, "")
         }
-        display.textContent = p(cut.textContent); 
+
+        display.textContent = display.textContent.slice(0,-2) ;
+
     }else if(unit.textContent === "AC"){
         display.textContent = '';
     }
 
 
+     //    Percentage
+     if(display.textContent.includes("%")){
+        const percentage = look => {
+         let g = look.slice(0,-1).split("%");
 
+         return Number(g)/100;
+         
+        }
+         let ans = percentage(look)
+        //  console.count(ans)
+        display.textContent = ans;
+       } 
+
+// EQUALS
    if(unit.textContent === "=" ){
     // ADDITION
        if(display.textContent.includes("+")){
@@ -96,7 +114,8 @@ unit.addEventListener("click", ()=>{
         //  console.count(ans)
         display.textContent = ans.toFixed(4);
        } 
-   }
+       
+}
 
 
     })
