@@ -1,7 +1,5 @@
 const inputs = document.querySelectorAll(".unit");
 const display = document.querySelector(".outputCurrent");
-const cut = document.getElementById("cut");
-
 
 inputs.forEach(unit =>{
 unit.addEventListener("click", ()=>{
@@ -23,7 +21,7 @@ unit.addEventListener("click", ()=>{
          let  w = textContent.slice(0, -2);
           return w
         }
-        display.textContent = p(cut.textContent); 
+        display.textContent = p(display.textContent); 
     }else if(unit.textContent === "AC"){
         display.textContent = '';
     }
