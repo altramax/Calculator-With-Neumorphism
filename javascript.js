@@ -123,7 +123,7 @@ unit.addEventListener("click", ()=>{
          let ans = division(look)
          let str = `${ans}`
         if(str.length > 9){
-            display.textContent = ans.toFixed(8);
+            display.textContent = ans.toFixed(7);
         }else{
             display.textContent = ans;
         }
