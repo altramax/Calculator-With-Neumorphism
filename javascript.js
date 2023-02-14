@@ -60,7 +60,7 @@ unit.addEventListener("click", ()=>{
          let ans = addition(look)
          let str = `${ans}`
         if(str.length > 9){
-            display.textContent = ans.toFixed(9);
+            display.textContent = ans.toFixed(8);
         }else{
             display.textContent = ans;
         } 
@@ -81,7 +81,7 @@ unit.addEventListener("click", ()=>{
          let ans = subtraction(look)
          let str = `${ans}`
          if(str.length > 9){
-             display.textContent = ans.toFixed(9);
+             display.textContent = ans.toFixed(8);
          }else{
              display.textContent = ans;
          } 
@@ -102,7 +102,7 @@ unit.addEventListener("click", ()=>{
          let ans = multiplication(look)
          let str = `${ans}`
         if(str.length > 9){
-            display.textContent = ans.toFixed(9);
+            display.textContent = ans.toFixed(8);
         }else{
             display.textContent = ans;
         } 
