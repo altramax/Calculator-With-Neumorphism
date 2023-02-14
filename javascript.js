@@ -6,54 +6,53 @@ const cut = document.getElementById("cut");
 inputs.forEach(unit =>{
 unit.addEventListener("click", ()=>{
 
-    // For display
     const running = () => {
         display.append(unit.textContent);
     }
-    
+
+    // LIMIT INPUT FIELD
     if(display.textContent.length <= 9){
         running();
     }
    
     let look = display.textContent;
 
-    
+    // CLEAR AND CLEAR ALL
     if(unit.textContent === "C"){
-       
-        let p = ()=>{
-
-    //    console.log(cut.innerHTML.slice(0,-2));
-
-    //       return cut.innerHTML.slice(0,-1).replace(cut.innerHTML.length - 2, "")
+        let p = (textContent)=>{
+         let  w = textContent.slice(0, -2);
+          return w
         }
-
-        display.textContent = display.textContent.slice(0,-2) ;
-
+        display.textContent = p(cut.textContent); 
     }else if(unit.textContent === "AC"){
         display.textContent = '';
     }
 
+    // PERCENTAGE
+    if(unit.textContent === "%"){
+        let g = look.slice(0,-1).split("%");
+        let w = g/100
+        let str = `${w}`
+        if(str.length > 9){
+            display.textContent = w.toFixed(8);
+        }else{
+            display.textContent = w;
+        } 
+    }
 
-     //    Percentage
-     if(display.textContent.includes("%")){
-        const percentage = look => {
-         let g = look.slice(0,-1).split("%");
 
-         return Number(g)/100;
-         
-        }
-         let ans = percentage(look)
-        //  console.count(ans)
-        display.textContent = ans;
-       } 
+   if(unit.textContent){
 
-// EQUALS
-   if(unit.textContent === "=" ){
+      if(display.textContent.includes("=")){
+        let g = look.slice(0,-1);
+        display.textContent = g;
+      }
+
+
     // ADDITION
-       if(display.textContent.includes("+")){
+       if(display.textContent.includes("+") && unit.textContent === "=" ){
         const addition = look => {
          let g = look.slice(0,-1).split("+");
-        //  console.log(g);
          let p = 0;
          for (const j of g){
              p += Number(j)
@@ -61,13 +60,16 @@ unit.addEventListener("click", ()=>{
          return p
         }
          let ans = addition(look)
-        //  console.log(ans.textContent.slice(0,4));
-         console.log(ans.toFixed(1));
-        display.textContent = ans.toFixed(1);    
+         let str = `${ans}`
+        if(str.length > 9){
+            display.textContent = ans.toFixed(9);
+        }else{
+            display.textContent = ans;
+        } 
        }  
        
     //    SUBTRACTON
-       if(display.textContent.includes("-")){
+       if(display.textContent.includes("-") && unit.textContent === "=" ){
         const subtraction = look => {
          let g = look.slice(0,-1).split("-");
          let w = g.slice(1)
@@ -79,11 +81,16 @@ unit.addEventListener("click", ()=>{
          return p
         }
          let ans = subtraction(look)
-        display.textContent = ans;
+         let str = `${ans}`
+         if(str.length > 9){
+             display.textContent = ans.toFixed(9);
+         }else{
+             display.textContent = ans;
+         } 
        } 
        
     //    MULTIPLICATION
-    if(display.textContent.includes("⨯")){
+    if(display.textContent.includes("⨯") && unit.textContent === "=" ){
         const multiplication = look => {
          let g = look.slice(0,-1).split("⨯");
          let w = g.slice(1)
@@ -95,11 +102,16 @@ unit.addEventListener("click", ()=>{
          return p
         }
          let ans = multiplication(look)
-        display.textContent = ans;
+         let str = `${ans}`
+        if(str.length > 9){
+            display.textContent = ans.toFixed(9);
+        }else{
+            display.textContent = ans;
+        } 
        } 
 
     //    DIVISION
-        if(display.textContent.includes("÷")){
+        if(display.textContent.includes("÷") && unit.textContent === "=" ){
         const division = look => {
          let g = look.slice(0,-1).split("÷");
          let w = g.slice(1)
@@ -111,27 +123,14 @@ unit.addEventListener("click", ()=>{
          return p
         }
          let ans = division(look)
-        //  console.count(ans)
-        display.textContent = ans.toFixed(4);
+         let str = `${ans}`
+        if(str.length > 9){
+            display.textContent = ans.toFixed(8);
+        }else{
+            display.textContent = ans;
+        }
        } 
-       
-}
-
-
+   }
+    })
     })
 
-    })
-
-// look.includes("+")
-//        let jk = look.split("+");
-//        console.log(jk);
-//        let p = 0;
-
-
-
-
-// let jk = look.split("+");
-// let y = 0;
-//  for (const k of jk){
-//    y += k
-//  }
