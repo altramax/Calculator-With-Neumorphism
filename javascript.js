@@ -1,5 +1,6 @@
 const inputs = document.querySelectorAll(".unit");
 const display = document.querySelector(".outputCurrent");
+const cut = document.getElementById("cut");
 
 
 inputs.forEach(unit =>{
