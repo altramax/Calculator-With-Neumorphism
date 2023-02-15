@@ -9,7 +9,7 @@ unit.addEventListener("click", ()=>{
     }
 
     // LIMIT INPUT FIELD
-    if(display.textContent.length <= 9){
+    if(display.textContent.length < 9){
         running();
     }
    
